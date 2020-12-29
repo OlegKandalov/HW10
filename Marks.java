@@ -5,14 +5,14 @@ public class Marks {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter mark");
         int num = scanner.nextInt();
-
-        switch (num) {
-            case 9, 10 -> System.out.println("Well");
-            case 7, 8 -> System.out.println("Good");
-            case 6 -> System.out.println("Acceptable");
-            case 5 -> System.out.println("Bad");
-            case 1, 2, 3, 4 -> System.out.println("Very Bad");
+        String textMark = switch (num) {
+            case 9, 10 -> "Well";
+            case 7, 8 -> "Good";
+            case 6 -> "Acceptable";
+            case 5 -> "Bad";
+            case 1, 2, 3, 4 -> "Very Bad";
             default -> throw new IllegalAccessException("No such assessment exists");
-        }
+        };
+        System.out.println(textMark);
     }
 }
